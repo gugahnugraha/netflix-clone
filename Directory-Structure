@@ -1,0 +1,42 @@
+netflix-clone/
+├── client/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       │   ├── MovieCard.js
+│       │   ├── TvShowCard.js
+│       │   └── Header.js
+│       ├── pages/
+│       │   ├── Movies.js
+│       │   ├── MovieDetail.js
+│       │   ├── TvShows.js
+│       │   └── TvShowDetail.js
+│       ├── services/
+│       │   └── api.js
+│       ├── hooks/
+│       │   └── useAuth.js
+│       ├── contexts/
+│       │   └── AuthContext.js
+│       ├── utils/
+│       │   └── axios.js
+│       ├── App.js
+│       └── index.js
+└── server/
+    ├── config/
+    │   └── db.js
+    ├── controllers/
+    │   ├── movieController.js
+    │   ├── tvShowController.js
+    │   └── authController.js
+    ├── middleware/
+    │   ├── auth.js
+    │   └── admin.js
+    ├── models/
+    │   ├── Movie.js
+    │   ├── TvShow.js
+    │   └── User.js
+    ├── routes/
+    │   ├── movies.js
+    │   ├── tvShows.js
+    │   └── auth.js
+    └── server.js

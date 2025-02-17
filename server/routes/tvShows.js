@@ -1,16 +1,13 @@
-// server/routes/tvShows.js
 const express = require('express');
 const router = express.Router();
 const tvShowController = require('../controllers/tvShowController');
-const { auth, isAdmin } = require('../middleware/auth');
+const tvShowsController = require('../controllers/tvShowsController');
+const { auth } = require('../middleware/auth');
 
-// Public routes
-router.get('/', tvShowController.getTvShows);
-router.get('/:id', tvShowController.getTvShow);
-
-// Protected routes (Admin only)
-router.post('/', [auth, isAdmin], tvShowController.addTvShow);
-router.put('/:id', [auth, isAdmin], tvShowController.updateTvShow);
-router.delete('/:id', [auth, isAdmin], tvShowController.deleteTvShow);
+router.get('/', auth, tvShowsController.getAllTvShows);
+router.get('/:id', auth, tvShowsController.getTvShowById);
+router.get('/popular', tvShowController.getPopular);
+router.get('/trending', tvShowController.getTrending);
+router.get('/top-rated', tvShowController.getTopRated);
 
 module.exports = router;

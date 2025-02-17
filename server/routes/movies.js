@@ -7,6 +7,9 @@ const { auth, isAdmin } = require('../middleware/auth');
 // Public routes
 router.get('/', movieController.getMovies);
 router.get('/:id', movieController.getMovie);
+router.get('/popular', movieController.getPopular);
+router.get('/trending', movieController.getTrending);
+router.get('/top-rated', movieController.getTopRated);
 
 // Protected routes (Admin only)
 router.post('/', [auth, isAdmin], movieController.addMovie);

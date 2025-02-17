@@ -103,6 +103,36 @@ const movieController = {
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
+  },
+
+  // Get popular movies
+  getPopular: async (req, res) => {
+    try {
+      const movies = await Movie.find().sort({ popularity: -1 }).limit(20);
+      res.json(movies);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  },
+
+  // Get trending movies
+  getTrending: async (req, res) => {
+    try {
+      const movies = await Movie.find().sort({ createdAt: -1 }).limit(20);
+      res.json(movies);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  },
+
+  // Get top-rated movies
+  getTopRated: async (req, res) => {
+    try {
+      const movies = await Movie.find().sort({ rating: -1 }).limit(20);
+      res.json(movies);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
   }
 };
 

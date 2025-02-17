@@ -20,8 +20,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.1"
   },
-  "description": "",
   "devDependencies": {
     "nodemon": "^3.1.9"
-  }
+  },
+  "description": ""
 }

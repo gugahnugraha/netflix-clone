@@ -1,51 +1,23 @@
-// server/models/TvShow.js
 const mongoose = require('mongoose');
 
 const tvShowSchema = new mongoose.Schema({
-  tmdbId: {
-    type: Number,
-    required: true,
-    unique: true
-  },
-  name: {
+  title: {
     type: String,
     required: true
   },
-  overview: {
+  description: {
     type: String,
     required: true
   },
+  releaseYear: Number,
+  genre: [String],
   posterPath: String,
   backdropPath: String,
-  firstAirDate: Date,
-  genres: [{
-    type: String
-  }],
-  numberOfSeasons: Number,
   voteAverage: Number,
-  episodes: [{
-    seasonNumber: Number,
-    episodeNumber: Number,
-    name: String,
-    overview: String,
-    streamUrl: String,
-    stillPath: String,
-    airDate: Date
-  }],
-  cast: [{
-    tmdbId: Number,
-    name: String,
-    character: String,
-    profilePath: String
-  }],
-  createdAt: {
-    type: Date,
-    default: Date.now
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now
-  }
+  numberOfSeasons: Number,
+  numberOfEpisodes: Number
+}, {
+  timestamps: true
 });
 
 module.exports = mongoose.model('TvShow', tvShowSchema);
